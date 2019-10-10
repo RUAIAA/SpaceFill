@@ -1,5 +1,5 @@
 import math
-def convertdist(lat1,long1,lat2,long2):   
+def convertdist(lat1,long1,lat2,long2):
     long1 = math.radians(long1)
     lat1 = math.radians(lat1)
     long2 = math.radians(long2)
@@ -9,7 +9,7 @@ def convertdist(lat1,long1,lat2,long2):
     d = 2*6371100*math.asin(math.sqrt(a))
     return d
 
-print(convertdist(38, 70, 39, 71))
-
-print(convertdist(38.150417,-76.43212,38.14766,-76.428277))
-    
+def latLongToCart(latPoint, longPoint, latOrigin, longOrigin):
+    x = convertdist(latOrigin, longPoint, latOrigin, longOrigin)
+    y = convertdist(latPoint, longOrigin, latOrigin, longOrigin)
+    return (x, y)
